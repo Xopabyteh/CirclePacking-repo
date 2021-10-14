@@ -42,6 +42,7 @@ namespace CirclePacking
             this.tx_MaxRadius = new System.Windows.Forms.TextBox();
             this.tx_Attempts = new System.Windows.Forms.TextBox();
             this.tx_Ammount = new System.Windows.Forms.TextBox();
+            this.btn_export = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_main)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,6 +69,7 @@ namespace CirclePacking
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_export);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -169,6 +171,16 @@ namespace CirclePacking
             this.tx_Ammount.TabIndex = 0;
             this.tx_Ammount.Text = "200";
             // 
+            // btn_export
+            // 
+            this.btn_export.Location = new System.Drawing.Point(13, 593);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.Size = new System.Drawing.Size(175, 23);
+            this.btn_export.TabIndex = 10;
+            this.btn_export.Text = "Export to png";
+            this.btn_export.UseVisualStyleBackColor = true;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -204,6 +216,7 @@ namespace CirclePacking
         private System.Windows.Forms.TextBox tx_MinRadius;
         private System.Windows.Forms.TextBox tx_MaxRadius;
         private System.Windows.Forms.TextBox tx_Attempts;
+        private System.Windows.Forms.Button btn_export;
     }
 }
 

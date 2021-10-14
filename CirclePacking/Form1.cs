@@ -69,7 +69,7 @@ namespace CirclePacking
 
             Bitmap bitmap = new Bitmap(_width, _height);
             Graphics g = Graphics.FromImage(bitmap);
-            g.Clear(Color.DarkSlateGray);
+            g.Clear(Color.Transparent);
 
             int attempt = 0;
             while (_circles.Count < maxCircles)
@@ -186,6 +186,23 @@ namespace CirclePacking
                 AssignVariables();
                 CreateAndAssignCircles();
             }
+        }
+
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            if (pic_main.Image == null)
+            {
+                return;
+            }
+
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            DialogResult result = dialog.ShowDialog();
+
+            if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(dialog.SelectedPath))
+            {
+                pic_main.Image.Save(dialog.SelectedPath + "\\cp-result.png");
+            }
+
         }
     }
 }
